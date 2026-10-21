@@ -13,9 +13,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("acme-tickets")
 
 PROJECT_ID = os.environ["DESCOPE_PROJECT_ID"]
-MCP_SERVER_ID = os.environ["DESCOPE_MCP_SERVER_ID"]
 MCP_SERVER_URL = os.environ["MCP_SERVER_URL"]  # e.g. https://tickets.example.com/mcp
-ISSUER = f"https://api.descope.com/v1/apps/agentic/{PROJECT_ID}/{MCP_SERVER_ID}"
+ISSUER = f"https://api.descope.com/v1/apps/{PROJECT_ID}"
 
 # Accept only tokens that Descope minted for this MCP server
 verifier = JWTVerifier(
